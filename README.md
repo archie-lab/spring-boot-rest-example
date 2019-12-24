@@ -11,7 +11,7 @@ This application is packaged as a war which has Tomcat 8 embedded. No Tomcat or 
 * You can build the project and run the tests by running ```mvn clean package```
 * Once successfully built, you can run the service by one of these two methods:
 ```
-        java -jar -Dspring.profiles.active=test target/spring-boot-rest-example-0.4.0.war
+        java -jar -Dspring.profiles.active=test target/spring-boot-rest-example-0.5.0.war
 or
         mvn spring-boot:run -Drun.arguments="spring.profiles.active=test"
 ```
@@ -20,8 +20,8 @@ or
 Once the application runs you should see something like this
 
 ```
-2017-08-30 17:31:23.091  INFO 19387 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8090 (http)
-2017-08-30 17:31:23.097  INFO 19387 --- [           main] com.khoubyari.example.Application        : Started Application in 22.285 seconds (JVM running for 23.032)
+2017-08-29 17:31:23.091  INFO 19387 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8090 (http)
+2017-08-29 17:31:23.097  INFO 19387 --- [           main] com.khoubyari.example.Application        : Started Application in 22.285 seconds (JVM running for 23.032)
 ```
 
 ## About the Service
@@ -167,9 +167,9 @@ hotel.service:
 ### Then run is using the 'mysql' profile:
 
 ```
-        java -jar -Dspring.profiles.active=mysql target/spring-boot-rest-example-0.4.0.war
+        java -jar -Dspring.profiles.active=mysql target/spring-boot-rest-example-0.5.0.war
 or
-        mvn spring-boot:run -Drun.arguments="spring.profiles.active=mysql"
+        mvn spring-boot:run -Drun.jvmArguments="-Dspring.profiles.active=mysql"
 ```
 
 # Attaching to the app remotely from your IDE
@@ -179,13 +179,10 @@ Run the service with these command line options:
 ```
 mvn spring-boot:run -Drun.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"
 or
-java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 -Dspring.profiles.active=test -Ddebug -jar target/spring-boot-rest-example-0.4.0.war
+java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 -Dspring.profiles.active=test -Ddebug -jar target/spring-boot-rest-example-0.5.0.war
 ```
 and then you can connect to it remotely using your IDE. For example, from IntelliJ You have to add remote debug configuration: Edit configuration -> Remote.
 
 # Questions and Comments: khoubyari@gmail.com
-
-
-
 
 
